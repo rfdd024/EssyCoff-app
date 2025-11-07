@@ -88,7 +88,7 @@ app/src/main/java/com/example/essycoff_cashier/
 
 Berikut adalah diagram alur sistem EssyCoff POS:
 
-![Flowchart EssyCoff](doc/Flowchart-EssyCoff.png)
+![Flowchart EssyCoff](doc/db.png)
 
 ## Database Schema
 
@@ -96,7 +96,7 @@ Berikut adalah diagram alur sistem EssyCoff POS:
 
 Berikut adalah diagram skema database EssyCoff:
 
-![Database Schema](doc/db.png)
+![Database Schema](doc/Flowchart-EssyCoff.png)
 
 ### Database Tables
 
