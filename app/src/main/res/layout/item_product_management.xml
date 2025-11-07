@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_product"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Product Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Name"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary" />
+
+                <TextView
+                    android:id="@+id/tv_product_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="COFFEE"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/bg_category_tag"
+                    android:padding="4dp"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_edit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_edit"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Edit product"
+                    app:tint="@color/info_color"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageButton
+                    android:id="@+id/btn_delete"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_delete"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Delete product"
+                    app:tint="@color/error_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Product Details -->
+        <TextView
+            android:id="@+id/tv_product_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product description"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp 25,000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_color"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Stock Management -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rounded_light"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock:"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginEnd="8dp" />
+
+            <ImageButton
+                android:id="@+id/btn_stock_minus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_remove"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Decrease stock"
+                app:tint="@color/error_color" />
+
+            <TextView
+                android:id="@+id/tv_current_stock"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:gravity="center" />
+
+            <ImageButton
+                android:id="@+id/btn_stock_plus"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_add"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Increase stock"
+                app:tint="@color/success_color" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_stock_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stock Aman"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/success_color" />
+
+        </LinearLayout>
+
+        <!-- Availability Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tersedia untuk dijual"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary" />
+
+            <Switch
+                android:id="@+id/switch_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:thumbTint="@color/primary_color"
+                android:trackTint="@color/secondary_color" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

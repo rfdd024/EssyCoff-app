@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bottom Navigation Style -->
+    <style name="Widget.EssyCoffCashier.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@drawable/bottom_nav_color_selector</item>
+        <item name="itemTextColor">@drawable/bottom_nav_color_selector</item>
+        <item name="itemBackground">@android:color/white</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="elevation">8dp</item>
+        <item name="android:background">@drawable/bottom_nav_background</item>
+    </style>
+</resources>

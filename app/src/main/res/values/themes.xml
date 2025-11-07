@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.EssyCoffCashier" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Coffee Shop Brand Colors -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent_color</item>
+        <item name="colorSecondaryVariant">@color/secondary_color</item>
+        <item name="colorOnSecondary">@color/text_primary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        
+        <!-- Component Styles -->
+        <item name="bottomNavigationStyle">@style/Widget.EssyCoffCashier.BottomNavigationView</item>
+        <item name="materialButtonStyle">@style/Widget.EssyCoffCashier.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.EssyCoffCashier.CardView</item>
+        <!-- Force system font -->
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Theme without ActionBar for Login and Main Activity -->
+    <style name="Theme.EssyCoffCashier.NoActionBar" parent="Theme.EssyCoffCashier">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    
+    <!-- Bottom Navigation Style - Moved to styles_bottom_nav.xml -->
+    
+    <!-- Button Style -->
+    <style name="Widget.EssyCoffCashier.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+    
+    <!-- CardView Style -->
+    <style name="Widget.EssyCoffCashier.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+</resources>

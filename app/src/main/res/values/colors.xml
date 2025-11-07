@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Coffee Shop Theme Colors -->
+    <color name="primary_color">#8B4513</color> <!-- Saddle Brown -->
+    <color name="primary_dark">#5D2F0A</color> <!-- Dark Brown -->
+    <color name="accent_color">#D2691E</color> <!-- Chocolate -->
+    <color name="secondary_color">#F5DEB3</color> <!-- Wheat -->
+    
+    <!-- Background Colors -->
+    <color name="background_color">#FFF8DC</color> <!-- Cornsilk -->
+    <color name="card_background">#FFFFFF</color> <!-- White -->
+    <color name="surface_color">#FAFAFA</color> <!-- Light Gray -->
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color> <!-- Dark Gray -->
+    <color name="text_secondary">#757575</color> <!-- Medium Gray -->
+    <color name="text_hint">#BDBDBD</color> <!-- Light Gray -->
+    <color name="text_white">#FFFFFF</color> <!-- White -->
+    
+    <!-- Status Colors -->
+    <color name="success_color">#4CAF50</color> <!-- Green -->
+    <color name="error_color">#F44336</color> <!-- Red -->
+    <color name="warning_color">#FF9800</color> <!-- Orange -->
+    <color name="info_color">#2196F3</color> <!-- Blue -->
+    
+    <!-- Coffee theme colors -->
+    <color name="coffee_primary">#8B4513</color>
+    <color name="coffee_dark">#5D2F0A</color>
+    <color name="coffee_light">#D2B48C</color>
+    <color name="coffee_medium">#A0522D</color>
+    <color name="chip_unselected">#F5F5F5</color>
+    <color name="coffee_accent">#CD853F</color>
+    
+    <!-- Background overlay colors -->
+    <color name="background_overlay">#80000000</color>
+    <color name="login_overlay">#80000000</color>
+    <color name="white_90">#E6FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_40">#66FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color> 
+    
+    <!-- Default Material Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

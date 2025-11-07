@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EssyCoff-Cashier</string>
+    
+    <!-- Search and Filter -->
+    <string name="search_products">Cari produk...​​</string>
+    <string name="all_categories">Semua</string>
+    <string name="search_hint">Cari minuman atau makanan...</string>
+    
+    <!-- Messages -->
+    <string name="error_loading_products">Gagal memuat produk</string>
+    <string name="error_loading_categories">Gagal memuat kategori</string>
+    
+    <!-- Categories -->
+    <string-array name="product_categories">
+        <item>Kopi</item>
+        <item>Teh</item>
+        <item>Minuman Dingin</item>
+        <item>Makanan Ringan</item>
+        <item>Makanan Berat</item>
+        <item>Roti</item>
+    </string-array>
+    
+    <!-- Button Labels -->
+    <string name="btn_apply">Terapkan</string>
+    <string name="btn_reset">Reset</string>
+    
+    <!-- Placeholders -->
+    <string name="no_products_found">Produk tidak ditemukan</string>
+    <string name="select_category">Pilih Kategori</string>
+</resources>

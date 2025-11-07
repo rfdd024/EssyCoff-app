@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_color"
+    android:padding="16dp">
+
+    <!-- Loading Progress Bar -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:indicatorColor="@color/coffee_primary"
+        app:trackColor="@color/coffee_light"
+        app:trackThickness="4dp"/>
+
+    <!-- Products Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_products"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/card_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Search Bar -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/search_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:startIconDrawable="@drawable/ic_search"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/coffee_primary"
+                app:hint="@string/search_products"
+                app:startIconTint="@color/coffee_primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_500" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Category Chips -->
+            <HorizontalScrollView
+                android:id="@+id/category_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:scrollbars="none">
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/category_chip_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:flexWrap="nowrap">
+
+                    <!-- All Categories Chip -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_all"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checkable="true"
+                        android:checked="true"
+                        android:text="@string/all_categories"
+                        android:textColor="@color/white"
+                        app:chipBackgroundColor="@color/coffee_primary"
+                        app:chipCornerRadius="16dp"
+                        app:chipMinHeight="32dp"
+                        app:chipStrokeColor="@color/coffee_primary"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="false"
+                        app:rippleColor="@color/coffee_light" />
+
+                    <!-- Dynamic categories will be added here -->
+
+                </com.google.android.flexbox.FlexboxLayout>
+            </HorizontalScrollView>
+
+            <!-- Products Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_coffee_menu"
+                    android:tint="@color/coffee_primary"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Menu Produk"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/coffee_dark" />
+
+                <!-- Category Filter -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_categories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Semua"
+                        android:checked="true"
+                        style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_coffee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kopi"
+                        style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_food"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Makanan"
+                        style="@style/Widget.MaterialComponents.Chip.Choice" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+
+            <!-- Products Grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_products"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:clipToPadding="false"
+                android:paddingBottom="8dp" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Cart Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_cart"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="12dp"
+        android:layout_marginStart="8dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Cart Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/toolbar_gradient"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_receipt"
+                    android:tint="@color/white"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Keranjang Belanja"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white_20">
+
+                    <TextView
+                        android:id="@+id/tv_total_items"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Cart Content -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Empty Cart Message -->
+                <LinearLayout
+                    android:id="@+id/layout_empty_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_receipt"
+                        android:tint="@color/coffee_light"
+                        android:alpha="0.5"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Keranjang Kosong"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih produk untuk memulai transaksi"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_hint"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+                <!-- Cart Items -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cart"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- Cart Summary -->
+            <LinearLayout
+                android:id="@+id/layout_cart_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/surface_color"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <!-- Subtotal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subtotal"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tv_subtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 0"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary" />
+
+                </LinearLayout>
+
+                <!-- Tax -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pajak (10%)"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tv_tax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 0"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary" />
+
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/coffee_light"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Total -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/coffee_dark" />
+
+                    <TextView
+                        android:id="@+id/tv_total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rp 0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/coffee_primary" />
+
+                </LinearLayout>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_clear_cart"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="Hapus"
+                        android:textSize="14sp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        app:strokeColor="@color/error_color"
+                        android:textColor="@color/error_color"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_checkout"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="2"
+                        android:text="BAYAR"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/coffee_primary"
+                        app:cornerRadius="12dp"
+                        android:layout_marginStart="8dp"
+                        app:icon="@drawable/ic_receipt"
+                        app:iconGravity="textStart" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

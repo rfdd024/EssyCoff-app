@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_product"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Product Image -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/iv_product_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:src="@drawable/product_espresso"
+                android:scaleType="centerCrop"
+                android:contentDescription="Product Image" />
+
+            <!-- Stock Badge -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_stock_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="@color/success_color"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/tv_product_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="2dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </FrameLayout>
+
+        <!-- Product Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Product Name -->
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Espresso"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/coffee_dark"
+                android:gravity="center"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Product Category -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="@color/coffee_light"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/tv_product_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KOPI"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Product Price -->
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rp 25.000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/coffee_primary"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
