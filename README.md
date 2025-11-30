@@ -270,12 +270,6 @@ private static final String SUPABASE_KEY = "YOUR_SUPABASE_ANON_KEY";
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
-
-Untuk pertanyaan atau dukungan, silakan hubungi:
-- Email: support@essycoff.com
-- GitHub Issues: [Create Issue](https://github.com/your-repo/issues)
-
 ---
 
-**EssyCoff POS** - Simplifying Coffee Shop Operations ☕
+**EssyCoff POS** - Simplifying Coffee Shop Operations (Android) ☕
